@@ -1,18 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Cyber Battlefield</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adaptive Cyber Battlefield Simulator</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>🕶 Adaptive Cyber Battlefield Simulator</h1>
+        <p class="subtitle">Attack → Detect → Defend → Adapt</p>
+      </div>
+      <div class="status-pill idle" id="systemMode">System Idle</div>
+    </header>
 
-<h1>🕶 Cyber Battlefield Simulator</h1>
+    <main class="main-grid">
+      <!-- LEFT PANEL -->
+      <section class="panel control-panel">
+        <h2>🎛 Control Center</h2>
 
-<button onclick="startAttack()">Start Attack</button>
+        <div class="form-group">
+          <label for="attackMode">Attacker Mode</label>
+          <select id="attackMode">
+            <option value="aggressive">Aggressive</option>
+            <option value="stealth">Stealth</option>
+            <option value="targeted">Targeted</option>
+          </select>
+        </div>
 
-<div id="network"></div>
+        <div class="form-group">
+          <label for="defenseMode">Defender Mode</label>
+          <select id="defenseMode">
+            <option value="passive">Passive Monitoring</option>
+            <option value="active">Active Scanning</option>
+            <option value="auto">Auto Quarantine</option>
+          </select>
+        </div>
 
-<script src="script.js"></script>
+        <div class="button-group">
+          <button onclick="startAttack()">🚨 Start Attack</button>
+          <button onclick="runDefense()">🛡 Run Defense</button>
+          <button onclick="resetSimulation()" class="secondary">🔄 Reset</button>
+        </div>
 
+        <div class="legend">
+          <h3>Node Status</h3>
+          <div class="legend-item"><span class="dot safe"></span> Safe</div>
+          <div class="legend-item"><span class="dot suspicious"></span> Suspicious</div>
+          <div class="legend-item"><span class="dot attacked"></span> Attacked</div>
+          <div class="legend-item"><span class="dot blocked"></span> Blocked</div>
+          <div class="legend-item"><span class="dot critical"></span> Critical</div>
+        </div>
+      </section>
+
+      <!-- CENTER PANEL -->
+      <section class="panel battlefield-panel">
+        <div class="panel-head">
+          <h2>🌐 Network Battlefield</h2>
+          <p>Cyber nodes with live attack/defense state visualization</p>
+        </div>
+
+        <div id="network" class="network-grid"></div>
+      </section>
+
+      <!-- RIGHT PANEL -->
+      <section class="panel side-panel">
+        <div class="metrics-box">
+          <h2>📊 Metrics</h2>
+
+          <div class="metric-card">
+            <span>Total Nodes</span>
+            <strong id="totalNodes">0</strong>
+          </div>
+
+          <div class="metric-card">
+            <span>Attacked Nodes</span>
+            <strong id="attackedCount">0</strong>
+          </div>
+
+          <div class="metric-card">
+            <span>Blocked Nodes</span>
+            <strong id="blockedCount">0</strong>
+          </div>
+
+          <div class="metric-card">
+            <span>Network Survival</span>
+            <strong id="survivalRate">0%</strong>
+          </div>
+
+          <div class="metric-card">
+            <span>Detection Time</span>
+            <strong id="detectionTime">--</strong>
+          </div>
+        </div>
+
+        <div class="logs-box">
+          <h2>📝 Activity Logs</h2>
+          <ul id="logs"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
