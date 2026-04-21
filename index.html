@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adaptive Cyber Battlefield Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>🕶 Adaptive Cyber Battlefield Simulator</h1>
+        <p class="subtitle">Attack → Detect → Defend → Adapt</p>
+      </div>
+      <div class="status-pill idle" id="systemMode">System Idle</div>
+    </header>
+
+    <main class="main-grid">
+      
+      <!-- LEFT PANEL -->
+      <section class="panel control-panel">
+        <h2>🎛 Control Center</h2>
+
+        <div class="form-group">
+          <label for="attackMode">Attacker Mode</label>
+          <select id="attackMode">
+            <option value="aggressive">Aggressive</option>
+            <option value="stealth">Stealth</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="defenseMode">Defender Mode</label>
+          <select id="defenseMode">
+            <option value="passive">Passive</option>
+            <option value="active">Active</option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <button onclick="startAttack()">🚨 Start Attack</button>
+          <button onclick="resetSimulation()" class="secondary">🔄 Reset</button>
+        </div>
+      </section>
+
+      <!-- CENTER PANEL -->
+      <section class="panel battlefield-panel">
+        <div class="panel-head">
+          <h2>🌐 Network Battlefield</h2>
+          <p>Live simulation</p>
+        </div>
+
+        <!-- 🔥 THIS WILL BE FILLED BY JS -->
+        <div id="network" class="network-grid"></div>
+      </section>
+
+      <!-- RIGHT PANEL -->
+      <section class="panel side-panel">
+        <div class="metrics-box">
+          <h2>📊 Metrics</h2>
+
+          <div class="metric-card">
+            <span>Total Nodes</span>
+            <strong id="totalNodes">0</strong>
+          </div>
+
+          <div class="metric-card">
+            <span>Attacked Nodes</span>
+            <strong id="attackedCount">0</strong>
+          </div>
+
+          <div class="metric-card">
+            <span>Blocked Nodes</span>
+            <strong id="blockedCount">0</strong>
+          </div>
+
+          <div class="metric-card">
+            <span>Network Survival</span>
+            <strong id="survivalRate">0%</strong>
+          </div>
+
+          <div class="metric-card">
+            <span>Detection Time</span>
+            <strong id="detectionTime">--</strong>
+          </div>
+        </div>
+
+        <div class="logs-box">
+          <h2>📝 Activity Logs</h2>
+          <ul id="logs"></ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- 🔥 CONNECT JS -->
+  <script src="script.js"></script>
+</body>
+</html>
