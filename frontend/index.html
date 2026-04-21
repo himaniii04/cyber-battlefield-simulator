@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adaptive Cyber Battlefield Simulator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -17,6 +17,7 @@
     </header>
 
     <main class="main-grid">
+      
       <!-- LEFT PANEL -->
       <section class="panel control-panel">
         <h2>🎛 Control Center</h2>
@@ -26,32 +27,20 @@
           <select id="attackMode">
             <option value="aggressive">Aggressive</option>
             <option value="stealth">Stealth</option>
-            <option value="targeted">Targeted</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="defenseMode">Defender Mode</label>
           <select id="defenseMode">
-            <option value="passive">Passive Monitoring</option>
-            <option value="active">Active Scanning</option>
-            <option value="auto">Auto Quarantine</option>
+            <option value="passive">Passive</option>
+            <option value="active">Active</option>
           </select>
         </div>
 
         <div class="button-group">
           <button onclick="startAttack()">🚨 Start Attack</button>
-          <button onclick="runDefense()">🛡 Run Defense</button>
           <button onclick="resetSimulation()" class="secondary">🔄 Reset</button>
-        </div>
-
-        <div class="legend">
-          <h3>Node Status</h3>
-          <div class="legend-item"><span class="dot safe"></span> Safe</div>
-          <div class="legend-item"><span class="dot suspicious"></span> Suspicious</div>
-          <div class="legend-item"><span class="dot attacked"></span> Attacked</div>
-          <div class="legend-item"><span class="dot blocked"></span> Blocked</div>
-          <div class="legend-item"><span class="dot critical"></span> Critical</div>
         </div>
       </section>
 
@@ -59,9 +48,10 @@
       <section class="panel battlefield-panel">
         <div class="panel-head">
           <h2>🌐 Network Battlefield</h2>
-          <p>Cyber nodes with live attack/defense state visualization</p>
+          <p>Live simulation</p>
         </div>
 
+        <!-- 🔥 THIS WILL BE FILLED BY JS -->
         <div id="network" class="network-grid"></div>
       </section>
 
@@ -101,9 +91,11 @@
           <ul id="logs"></ul>
         </div>
       </section>
+
     </main>
   </div>
 
+  <!-- 🔥 CONNECT JS -->
   <script src="script.js"></script>
 </body>
 </html>
