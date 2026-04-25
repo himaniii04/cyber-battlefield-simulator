@@ -170,7 +170,7 @@ function startAttack() {
   setSystemStatus("attack", "⚔️ Attack Running");
   addLog(`⚔️ Attack started${multiPoint ? " (MULTI-POINT from A + F)" : ""} | mode: ${attackMode} | defense: ${defenseMode}`);
 
-  fetch(`https://cyber-battlefield-simulator-1.onrender.com/attack?attackMode=${attackMode}&defenseMode=${defenseMode}&startNodes=${startNodes}`)
+  fetch(`https://cyber-battlefield-simulator-2.onrender.com/attack?attackMode=${attackMode}&defenseMode=${defenseMode}&startNodes=${startNodes}`)
     .then(res => res.json())
     .then(data => {
       applyBackendResult(data);
