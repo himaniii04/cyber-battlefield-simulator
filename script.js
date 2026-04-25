@@ -137,7 +137,7 @@ function startAttack() {
   setSystemStatus("attack", "Attack Running");
   addLog(`Attack started (${attackMode}) with defense (${defenseMode})`);
 
-  fetch(`https://cyber-battlefield-simulator.onrender.com/attack?attackMode=${attackMode}&defenseMode=${defenseMode}`)
+  fetch(`https://cyber-battlefield-simulator-1.onrender.com/attack?attackMode=${attackMode}&defenseMode=${defenseMode}`)
     .then(res => res.json())
     .then(data => {
       applyBackendResult(data);
