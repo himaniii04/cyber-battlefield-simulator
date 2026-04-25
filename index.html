@@ -17,7 +17,7 @@
     </header>
 
     <main class="main-grid">
-      
+
       <!-- LEFT PANEL -->
       <section class="panel control-panel">
         <h2>🎛 Control Center</h2>
@@ -27,6 +27,7 @@
           <select id="attackMode">
             <option value="aggressive">Aggressive</option>
             <option value="stealth">Stealth</option>
+            <option value="targeted">Targeted</option>
           </select>
         </div>
 
@@ -35,12 +36,21 @@
           <select id="defenseMode">
             <option value="passive">Passive</option>
             <option value="active">Active</option>
+            <option value="adaptive">Adaptive</option>
           </select>
         </div>
 
         <div class="button-group">
           <button onclick="startAttack()">🚨 Start Attack</button>
           <button onclick="resetSimulation()" class="secondary">🔄 Reset</button>
+        </div>
+
+        <div class="legend">
+          <h3>Legend</h3>
+          <div class="legend-item"><span class="dot safe"></span> Safe</div>
+          <div class="legend-item"><span class="dot critical"></span> Critical</div>
+          <div class="legend-item"><span class="dot attacked"></span> Attacked</div>
+          <div class="legend-item"><span class="dot blocked"></span> Blocked</div>
         </div>
       </section>
 
@@ -50,8 +60,6 @@
           <h2>🌐 Network Battlefield</h2>
           <p>Live simulation</p>
         </div>
-
-        <!-- 🔥 THIS WILL BE FILLED BY JS -->
         <div id="network" class="network-grid"></div>
       </section>
 
@@ -59,27 +67,22 @@
       <section class="panel side-panel">
         <div class="metrics-box">
           <h2>📊 Metrics</h2>
-
           <div class="metric-card">
             <span>Total Nodes</span>
             <strong id="totalNodes">0</strong>
           </div>
-
           <div class="metric-card">
             <span>Attacked Nodes</span>
             <strong id="attackedCount">0</strong>
           </div>
-
           <div class="metric-card">
             <span>Blocked Nodes</span>
             <strong id="blockedCount">0</strong>
           </div>
-
           <div class="metric-card">
             <span>Network Survival</span>
             <strong id="survivalRate">0%</strong>
           </div>
-
           <div class="metric-card">
             <span>Detection Time</span>
             <strong id="detectionTime">--</strong>
@@ -95,7 +98,6 @@
     </main>
   </div>
 
-  <!-- 🔥 CONNECT JS -->
   <script src="script.js"></script>
 </body>
 </html>
